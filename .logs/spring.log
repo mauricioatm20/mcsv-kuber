@@ -1,0 +1,30 @@
+2025-07-15T09:05:25.294Z  INFO 1 --- [msvc-usuarios] [main] o.m.s.m.u.MsvcUsuariosApplication        : Starting MsvcUsuariosApplication v0.0.1-SNAPSHOT using Java 21 with PID 1 (/app/msvc-usuarios-0.0.1-SNAPSHOT.jar started by root in /app)
+2025-07-15T09:05:25.296Z  INFO 1 --- [msvc-usuarios] [main] o.m.s.m.u.MsvcUsuariosApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-07-15T09:05:25.694Z  INFO 1 --- [msvc-usuarios] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-15T09:05:25.718Z  INFO 1 --- [msvc-usuarios] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 1 JPA repository interface.
+2025-07-15T09:05:25.784Z  INFO 1 --- [msvc-usuarios] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=7762f56f-f326-3968-aa3b-5e7998c42279
+2025-07-15T09:05:25.968Z  INFO 1 --- [msvc-usuarios] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-07-15T09:05:25.976Z  INFO 1 --- [msvc-usuarios] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-07-15T09:05:25.976Z  INFO 1 --- [msvc-usuarios] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-07-15T09:05:25.991Z  INFO 1 --- [msvc-usuarios] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-07-15T09:05:25.992Z  INFO 1 --- [msvc-usuarios] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 659 ms
+2025-07-15T09:05:26.065Z  INFO 1 --- [msvc-usuarios] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-15T09:05:26.086Z  INFO 1 --- [msvc-usuarios] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-07-15T09:05:26.100Z  INFO 1 --- [msvc-usuarios] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-07-15T09:05:26.230Z  INFO 1 --- [msvc-usuarios] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-15T09:05:26.245Z  INFO 1 --- [msvc-usuarios] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-07-15T09:05:26.528Z  INFO 1 --- [msvc-usuarios] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6ed51944
+2025-07-15T09:05:26.529Z  INFO 1 --- [msvc-usuarios] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-07-15T09:05:26.580Z  INFO 1 --- [msvc-usuarios] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.4.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-15T09:05:26.917Z  INFO 1 --- [msvc-usuarios] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-15T09:05:26.953Z  INFO 1 --- [msvc-usuarios] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-15T09:05:27.140Z  WARN 1 --- [msvc-usuarios] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-15T09:05:27.432Z  INFO 1 --- [msvc-usuarios] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-07-15T09:05:27.447Z  INFO 1 --- [msvc-usuarios] [main] o.m.s.m.u.MsvcUsuariosApplication        : Started MsvcUsuariosApplication in 2.409 seconds (process running for 2.781)
