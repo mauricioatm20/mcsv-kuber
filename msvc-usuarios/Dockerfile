@@ -1,5 +1,5 @@
 ARG MSVC_NAME=msvc-usuarios
-FROM eclipse-temurin:21-jdk AS builder
+FROM --platform=linux/amd64 eclipse-temurin:21-jdk-alpine AS builder
 
 ARG MSVC_NAME
 
@@ -16,16 +16,13 @@ COPY ./$MSVC_NAME/src ./src
 
 RUN ./mvnw clean package -DskipTests
 
-FROM eclipse-temurin:21-jdk
-
-ARG MSVC_NAME
+FROM --platform=linux/amd64 eclipse-temurin:21-jdk-alpine
 
 WORKDIR /app
 
 RUN mkdir ./logs
 
-ARG TARGET_FOLDER=/app/$MSVC_NAME/target
-COPY --from=builder $TARGET_FOLDER/msvc-usuarios-0.0.1-SNAPSHOT.jar .
+COPY --from=builder /app/msvc-usuarios/target/msvc-usuarios-0.0.1-SNAPSHOT.jar .
 
 EXPOSE 8081
 

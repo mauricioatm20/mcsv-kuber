@@ -1,55 +1,32 @@
 version: "3.9"
 services:
-  mysql:
-    container_name: mysql
-    image: mysql:8
-    ports:
-      - "3307:3306"
-    environment:
-      MYSQL_ROOT_PASSWORD: root1234
-      MYSQL_DATABASE: dbusuarios
-
-    volumes:
-      - data-mysql:/var/lib/mysql
-
   msvc-usuarios:
     container_name: msvc-usuarios
-    image: mauricioatm/usuarios   #esto lo he creado y subido a docker hub
-
-#    build:
-#      context: ./
-#      dockerfile: ./msvc-usuarios/Dockerfile
-
+    image: mauricioatm/usuariosv2
+    platform: linux/amd64
     environment:
       PORT: 8081
-      DB_HOST: mysql:3306
+      DB_HOST: usuariosdb.cw3eokiacx3c.us-east-1.rds.amazonaws.com
+      DB_PORT: 3306
       DB_DATABASE: dbusuarios
-      DB_USERNAME: root
-      DB_PASSWORD: root1234
+      DB_USERNAME: root       #tu usuario de RDS
+      DB_PASSWORD: root1234  #tu password de RDS
       USUARIOS_URL: msvc-cursos:8002
-
     ports:
       - "8081:8081"
-    depends_on:
-      - mysql
-    restart: always
+
 
   msvc-cursos:
     container_name: msvc-cursos
-    image: mauricioatm/cursos
+    image: mauricioatm/cursosv2
+    platform: linux/amd64
     environment:
       PORT: 8002
-      DB_HOST: mysql:3306
+      DB_HOST: usuariosdb.cw3eokiacx3c.us-east-1.rds.amazonaws.com
+      DB_PORT: 3306
       DB_DATABASE: dbusuarios
       DB_USERNAME: root
       DB_PASSWORD: root1234
       USUARIOS_URL: msvc-usuarios:8081
-
     ports:
       - "8002:8002"
-    depends_on:
-      - mysql
-    restart: always
-
-volumes:
-  data-mysql:
